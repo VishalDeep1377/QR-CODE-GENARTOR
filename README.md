@@ -1,826 +1,657 @@
-
 <div align="center">
 
-# ◈ QR STUDIO
+<!-- Animated Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C63FF,50:A855F7,100:EC4899&height=200&section=header&text=QR%20Code%20Studio&fontSize=60&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Enterprise%20SaaS%20Platform&descAlignY=60&descSize=22&descColor=e2e8f0" width="100%"/>
 
-### CREATE. CUSTOMIZE. SCAN. MANAGE.
+<!-- Badges Row 1 -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js"/>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
+</p>
 
-**A Modern Full-Stack QR Code Generation & Management Platform**
+<!-- Badges Row 2 -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Redis-Rate%20Limiting-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-3.4-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+  <img src="https://img.shields.io/badge/Vercel-Frontend-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
+  <img src="https://img.shields.io/badge/Render-Backend-6762A6?style=for-the-badge&logo=render&logoColor=white" alt="Render"/>
+</p>
 
-Build beautiful, customizable and intelligent QR experiences with a powerful Python backend and modern Next.js frontend.
+<!-- Badges Row 3 -->
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge" alt="License MIT"/>
+  <img src="https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI"/>
+  <img src="https://img.shields.io/badge/Tests-Pytest%20%2B%20Playwright-orange?style=for-the-badge&logo=pytest&logoColor=white" alt="Tests"/>
+  <img src="https://img.shields.io/badge/Security-Argon2id%20%2B%20JWT-red?style=for-the-badge&logo=letsencrypt&logoColor=white" alt="Security"/>
+</p>
 
 <br/>
 
-![Project](https://img.shields.io/badge/PROJECT-QR%20STUDIO-0D9488?style=for-the-badge)
-![Next.js](https://img.shields.io/badge/NEXT.JS-15-000000?style=for-the-badge&logo=nextdotjs)
-![React](https://img.shields.io/badge/REACT-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Python](https://img.shields.io/badge/PYTHON-3.x-3776AB?style=for-the-badge&logo=python)
-![FastAPI](https://img.shields.io/badge/FASTAPI-API-009688?style=for-the-badge&logo=fastapi)
-![TypeScript](https://img.shields.io/badge/TYPESCRIPT-5-3178C6?style=for-the-badge&logo=typescript)
+> ### 🚀 *The ultimate enterprise-grade QR Code platform — generate, scan, analyze, and manage QR codes at scale with bulletproof security and beautiful UX.*
 
-[Features](#-key-features) •
-[Architecture](#-system-architecture) •
-[Installation](#-installation--setup) •
-[API](#-api-documentation) •
-[Developer](#-developer)
+<br/>
 
 </div>
 
 ---
 
-# 01. PROJECT OVERVIEW
+## 📌 Table of Contents
 
-QR Studio is a full-stack QR code generation and management platform designed to simplify how users create, customize, scan and manage QR codes.
+<div align="center">
 
-The platform combines a responsive Next.js interface with a Python FastAPI backend to deliver a modular and maintainable application architecture.
+| 🔗 Section | 📄 Description |
+|:----------:|:--------------|
+| [✨ Features](#-features) | Full feature overview |
+| [🏗️ Architecture](#️-system-architecture) | System design & flow |
+| [📁 Project Structure](#-project-structure) | Directory layout |
+| [⚡ Tech Stack](#-tech-stack) | Technologies used |
+| [🛠️ Local Setup](#️-local-development-setup) | Dev environment guide |
+| [☁️ Deployment](#️-deployment) | Cloud deployment steps |
+| [🔐 Security](#-security-model) | Security controls |
+| [📡 API Reference](#-api-reference) | All API endpoints |
+| [📊 Analytics](#-analytics--monitoring) | Metrics & monitoring |
+| [🚧 Release Gates](#-release-gates) | Pre-launch checklist |
 
-### Core Objectives
-
-- Generate QR codes for multiple data formats.
-- Customize QR appearance with foreground and background colors.
-- Embed logos inside QR codes.
-- Generate downloadable PNG and SVG outputs.
-- Scan and decode QR codes from uploaded images.
-- Create dynamic QR links with editable destinations.
-- Generate hundreds of QR codes using CSV uploads.
-- Maintain QR generation history.
-- Track dynamic redirect scans.
-
----
-
-# 02. KEY FEATURES
-
-## QR Generation Engine
-
-| Feature | Description |
-|---|---|
-| Text QR | Convert text into QR codes |
-| Website QR | Generate website URL QR codes |
-| Wi-Fi QR | Share Wi-Fi credentials |
-| Email QR | Generate email action QR codes |
-| Phone QR | Create telephone QR codes |
-| Contact QR | Generate vCard contact QR codes |
-| PNG Export | Download QR codes as PNG |
-| SVG Export | Generate scalable SVG QR codes |
-| Color Customization | Customize foreground and background |
-| Logo Embedding | Add a logo inside QR codes |
-| Error Correction | L, M, Q and H levels |
-
-## Dynamic QR Management
-
-- Create dynamic QR links.
-- Store destination URLs.
-- Change destination URLs without regenerating the QR code.
-- Redirect users through unique QR identifiers.
-- Count visits to dynamic redirect links.
-
-## QR Scanner
-
-- Upload QR code images.
-- Decode QR content using OpenCV.
-- Identify whether decoded content is a URL.
-- Display decoded information.
-
-## Bulk QR Generator
-
-- Upload CSV files.
-- Select a content column.
-- Generate multiple QR codes.
-- Download generated QR images in a ZIP archive.
-- Supports up to 500 CSV records per batch.
-
-## History & Analytics
-
-- Save generated QR records.
-- View recent QR activity.
-- Delete QR history.
-- Mark QR codes as favorites.
-- Track total QR creations.
-- Track dynamic QR links.
-- Track dynamic redirect scans.
-
-## PDF Export
-
-Convert an uploaded image into a downloadable PDF containing the image.
+</div>
 
 ---
 
-# 03. TECHNOLOGY STACK
+## ✨ Features
 
-## Frontend Architecture
+<div align="center">
 
-| Technology | Purpose |
-|---|---|
-| Next.js 15 | React application framework |
-| React 19 | Component-based UI |
-| TypeScript | Type safety |
-| Tailwind CSS 3 | Styling framework |
-| Lucide React | Interface icons |
-| Recharts | Data visualization |
+```
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                    🎯  QR CODE STUDIO — ENTERPRISE CAPABILITIES                 ║
+╠══════════════════╦═══════════════════════╦═══════════════════════════════════════╣
+║  👤 AUTH & IAM   ║   📊 ANALYTICS        ║   🔲 QR WORKFLOWS                    ║
+╠══════════════════╬═══════════════════════╬═══════════════════════════════════════╣
+║ Email + Password ║ Per-account metrics   ║ URL, Text, Wi-Fi, vCard               ║
+║ JWT (12h, HttpOnly)║ Daily scan activity ║ Email, Phone QR types                 ║
+║ Argon2id hashing ║ QR type breakdown    ║ Color & logo customization             ║
+║ Owner-scoped data║ Dynamic scan events  ║ PNG / SVG export                       ║
+║ Role: user/admin ║ Recharts visualizer  ║ CSV / XLSX bulk import (500 rows)      ║
+║ Secure cookies   ║ Favorites tracking   ║ ZIP batch download                     ║
+╠══════════════════╬═══════════════════════╬═══════════════════════════════════════╣
+║  🔒 SECURITY     ║   🌐 DYNAMIC QR       ║   📷 SCANNING                         ║
+╠══════════════════╬═══════════════════════╬═══════════════════════════════════════╣
+║ Rate limiting    ║ Redirect creation     ║ OpenCV image decoding                 ║
+║ CORS allowlist   ║ Destination updates  ║ Webcam live scanner                   ║
+║ Origin checks    ║ Unguessable codes    ║ html5-qrcode integration              ║
+║ Security headers ║ Scan event tracking  ║ File upload scanning                  ║
+║ Request limits   ║ Ownership gating     ║ Browser permission aware              ║
+╚══════════════════╩═══════════════════════╩═══════════════════════════════════════╝
+```
 
-## Backend Architecture
-
-| Technology | Purpose |
-|---|---|
-| Python | Backend programming |
-| FastAPI | REST API framework |
-| Uvicorn | ASGI server |
-| Pydantic | Request validation |
-| qrcode | QR code generation |
-| Pillow | Image processing |
-| OpenCV | QR image scanning |
-| ReportLab | PDF generation |
-| NumPy | Image array processing |
-
-## Database & Storage
-
-| Technology | Purpose |
-|---|---|
-| MongoDB | Optional persistent database |
-| SQLite | Local development fallback |
-| PyMongo | MongoDB integration |
+</div>
 
 ---
 
-# 04. SYSTEM ARCHITECTURE
-
-QR Studio follows a modular full-stack architecture.
+## 🏗️ System Architecture
 
 ```mermaid
-flowchart TB
-    U["USER"]
-
-    subgraph FRONTEND["PRESENTATION LAYER"]
-        N["Next.js 15"]
-        R["React 19"]
-        T["TypeScript"]
-        UI["QR Studio Dashboard"]
+graph TB
+    subgraph CLIENT["🌐 Client Layer"]
+        B["🖥️ Browser"]
     end
 
-    subgraph API["BACKEND LAYER"]
-        F["FastAPI Application"]
-        V["Request Validation"]
-        Q["QR Generation Service"]
-        S["QR Scanning Service"]
-        D["Dynamic Redirect Service"]
-        B["Bulk Processing Service"]
-        P["PDF Export Service"]
+    subgraph FRONTEND["⚡ Frontend — Vercel"]
+        N["Next.js 15 App Router<br/>React 19 · TypeScript<br/>Tailwind CSS · Recharts"]
+        subgraph PAGES["📄 Pages"]
+            P1["/ Home"]
+            P2["/create  QR Generator"]
+            P3["/scan  Webcam Scanner"]
+            P4["/bulk  Batch Import"]
+            P5["/analytics  Dashboard"]
+            P6["/history  QR History"]
+            P7["/dynamic  Redirect Manager"]
+        end
     end
 
-    subgraph DATA["DATA LAYER"]
-        M[("MongoDB")]
-        L[("SQLite Fallback")]
+    subgraph BACKEND["🔧 Backend — Render (Docker)"]
+        F["FastAPI · Pydantic v2<br/>PyJWT · SlowAPI · Argon2id"]
+        subgraph SERVICES["⚙️ Services"]
+            S1["🔐 security.py<br/>JWT · Argon2id auth"]
+            S2["🔲 qr_service.py<br/>qrcode · Pillow · OpenCV"]
+            S3["💾 storage.py<br/>MongoDB · SQLite adapters"]
+        end
     end
 
-    U --> UI
-    UI --> N
-    N --> R
-    R --> T
-    UI -->|"HTTP REST API"| F
+    subgraph DATA["🗄️ Data Layer"]
+        M[("🍃 MongoDB Atlas<br/>Indexes: email, user_id<br/>history, redirects, scans")]
+        R[("⚡ Redis<br/>Rate limit counters<br/>Shared across API instances")]
+        SQ[("🗃️ SQLite<br/>Local dev only<br/>Isolated per developer")]
+    end
 
-    F --> V
-    V --> Q
-    V --> S
-    V --> D
-    V --> B
-    V --> P
+    B --> N
+    N --> P1 & P2 & P3 & P4 & P5 & P6 & P7
+    N -- "HTTPS API calls" --> F
+    F --> S1 & S2 & S3
+    S1 --> M
+    S3 --> M & SQ
+    F --> R
+    F -- "🌍 Public redirect /r/{code}" --> B
 
-    Q --> M
-    Q --> L
-    D --> M
-    D --> L
-    F --> M
-    F --> L
+    style CLIENT fill:#1e1b4b,stroke:#6366f1,color:#e0e7ff
+    style FRONTEND fill:#0f172a,stroke:#a855f7,color:#e2e8f0
+    style BACKEND fill:#0f172a,stroke:#06b6d4,color:#e2e8f0
+    style DATA fill:#0f172a,stroke:#22c55e,color:#e2e8f0
+    style PAGES fill:#1e293b,stroke:#7c3aed,color:#ddd6fe
+    style SERVICES fill:#1e293b,stroke:#0891b2,color:#cffafe
 ```
-
-## Architecture Explanation
-
-**1. Presentation Layer**
-
-The Next.js application handles the user interface, navigation, QR generation forms, scanner interface and history dashboard.
-
-**2. API Layer**
-
-FastAPI receives HTTP requests, validates input and connects frontend operations with backend services.
-
-**3. Business Logic Layer**
-
-The backend separates QR generation, image scanning, storage and other processing operations into dedicated modules.
-
-**4. Persistence Layer**
-
-MongoDB is used when a valid MongoDB connection is configured. Otherwise, the application uses SQLite.
 
 ---
 
-# 05. QR GENERATION WORKFLOW
+## 🔗 Request Flow
 
 ```mermaid
-flowchart TD
-    A([User Opens QR Studio])
-    B["Select QR Format"]
-    C["Enter QR Content"]
-    D["Customize QR Settings"]
-    E["Send API Request"]
-    F["Validate Request"]
-    G["Build QR Payload"]
-    H["Generate QR Image"]
-    I["Generate PNG and SVG"]
-    J["Save Generation History"]
-    K["Return QR Response"]
-    L["Display Preview"]
-    M["Download QR Code"]
+sequenceDiagram
+    autonumber
+    actor User as 👤 User
+    participant FE as ⚡ Next.js Frontend
+    participant API as 🔧 FastAPI Backend
+    participant Redis as ⚡ Redis
+    participant Mongo as 🍃 MongoDB Atlas
+    participant QRS as 🔲 QR Service
 
-    A --> B --> C --> D --> E
-    E --> F
-    F -->|"Invalid"| C
-    F -->|"Valid"| G
-    G --> H --> I --> J --> K --> L --> M
-```
+    User->>FE: Open /create
+    FE->>API: POST /api/auth/me (cookie check)
+    API->>Mongo: Validate user session
+    Mongo-->>API: User record
+    API-->>FE: 200 user context
 
-### Generation Process
+    User->>FE: Fill QR form & submit
+    FE->>API: POST /api/qr/generate
+    API->>Redis: Check rate limit (per IP)
+    Redis-->>API: OK / 429 Too Many Requests
+    API->>QRS: Generate QR (qrcode + Pillow)
+    QRS-->>API: QR image bytes (PNG/SVG)
+    API->>Mongo: Save to user history
+    Mongo-->>API: Saved _id
+    API-->>FE: QR image + metadata
+    FE-->>User: Render QR + download link
 
-1. User selects a QR format.
-2. User enters the required information.
-3. Frontend sends a request to FastAPI.
-4. Backend validates the supplied data.
-5. QR service converts the information into a QR payload.
-6. QR image is generated.
-7. PNG and SVG outputs are produced.
-8. Generation details are saved in the database.
-9. Frontend receives the generated QR response.
-10. User previews and downloads the QR code.
-
----
-
-# 06. DYNAMIC QR ARCHITECTURE
-
-Dynamic QR codes allow destination URLs to change without changing the QR code itself.
-
-```mermaid
-flowchart TD
-    A["Create Dynamic QR"]
-    B["Enter Destination URL"]
-    C["Generate Unique Identifier"]
-    D["Save Identifier and Destination"]
-    E["Create Redirect URL"]
-    F["Generate QR Image"]
-    G["User Scans QR Code"]
-    H["Backend Receives Redirect Request"]
-    I["Find Identifier in Database"]
-    J["Increment Scan Counter"]
-    K["Redirect to Destination"]
-
-    A --> B --> C --> D --> E --> F
-    F --> G --> H --> I
-    I -->|"Found"| J --> K
-    I -->|"Not Found"| X["Return 404 Error"]
-```
-
-### Why Dynamic QR Codes?
-
-Traditional QR codes contain fixed information.
-
-Dynamic QR codes contain a redirect URL that points to a destination stored on the backend.
-
-This allows the destination to be changed without printing a new QR code.
-
-**Example:**
-
-```text
-Original QR URL:
-https://your-backend.com/r/ABC123
-
-Initial Destination:
-https://example.com/page-one
-
-Updated Destination:
-https://example.com/page-two
-```
-
-The QR code remains the same while the destination changes.
-
----
-
-# 07. PROJECT DIRECTORY STRUCTURE
-
-```text
-QR-CODE-GENARTOR/
-│
-├── frontend/
-│   │
-│   ├── app/
-│   │   ├── bulk/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── create/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── dynamic/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── history/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── scan/
-│   │   │   └── page.tsx
-│   │   │
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   │
-│   ├── components/
-│   │   └── shell.tsx
-│   │
-│   ├── lib/
-│   │   └── api.ts
-│   │
-│   ├── public/
-│   │
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── next.config.ts
-│   ├── tailwind.config.ts
-│   └── tsconfig.json
-│
-├── backend/
-│   │
-│   ├── app/
-│   │   ├── services/
-│   │   │   ├── qr_service.py
-│   │   │   └── storage.py
-│   │   │
-│   │   ├── __init__.py
-│   │   └── main.py
-│   │
-│   ├── data/
-│   │
-│   ├── .env.example
-│   ├── requirements.txt
-│   └── README.md
-│
-├── .gitignore
-└── README.md
+    Note over User,Mongo: All data is owner-scoped by user_id 🔐
 ```
 
 ---
 
-# 08. INSTALLATION & SETUP
+## 📁 Project Structure
 
-## Prerequisites
-
-- Node.js 20 or later.
-- npm.
-- Python 3.10 or later.
-- Git.
-- MongoDB Atlas account (optional).
-
-## Step 1: Clone Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+```
+🏠 qr-code-studio-enterprise/
+└── 📦 qr-code-studio-web/
+    ├── 🔧 backend/
+    │   ├── 📂 app/
+    │   │   ├── 🐍 main.py              ← All FastAPI routes & middleware
+    │   │   ├── 🔐 security.py          ← JWT creation/validation, Argon2id
+    │   │   └── ⚙️  services/
+    │   │       ├── 🔲 qr_service.py   ← QR generation (qrcode + Pillow + OpenCV)
+    │   │       └── 💾 storage.py      ← MongoDB Atlas / SQLite adapters
+    │   ├── 🧪 tests/
+    │   │   └── pytest + FastAPI TestClient
+    │   ├── 🐳 Dockerfile
+    │   ├── 📄 requirements.txt
+    │   └── 📄 requirements-dev.txt
+    │
+    ├── ⚡ frontend/
+    │   ├── 📂 app/
+    │   │   ├── 🏠 page.tsx            ← Landing page
+    │   │   ├── 🔲 create/             ← QR Generator page
+    │   │   ├── 📷 scan/               ← Webcam + upload scanner
+    │   │   ├── 📦 bulk/               ← CSV / XLSX batch import
+    │   │   ├── 📊 analytics/          ← Recharts dashboard
+    │   │   ├── 📜 history/            ← QR history & favorites
+    │   │   ├── 🌐 dynamic/            ← Dynamic redirect manager
+    │   │   ├── 🔑 login/              ← Auth page
+    │   │   └── 📝 register/           ← Account creation
+    │   ├── 🧩 components/
+    │   │   └── shell.tsx              ← App shell (nav + layout wrapper)
+    │   ├── 📚 lib/                    ← Shared utilities & API client
+    │   ├── 🎭 e2e/                    ← Playwright smoke tests
+    │   └── 📄 package.json
+    │
+    ├── ⚙️  .github/workflows/ci.yml   ← Backend tests + lint + Playwright CI
+    └── 📋 render.yaml                 ← Render blueprint (Docker API service)
 ```
 
-```bash
-cd QR-CODE-GENARTOR
-```
+---
 
-## Step 2: Configure Frontend
+## ⚡ Tech Stack
 
-```bash
-cd frontend
-```
+<div align="center">
 
-Install dependencies:
+### 🖥️ Frontend
 
-```bash
-npm install
-```
+| Technology | Version | Purpose |
+|:----------:|:-------:|:--------|
+| ![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white) | **15** | App Router, SSR, file-based routing |
+| ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) | **19** | UI component library |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) | **5.7** | Type safety throughout |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind-38BDF8?logo=tailwindcss&logoColor=white) | **3.4** | Utility-first CSS framework |
+| ![Recharts](https://img.shields.io/badge/Recharts-22c55e?logo=chartdotjs&logoColor=white) | **2.15** | Analytics data visualization |
+| ![Lucide](https://img.shields.io/badge/Lucide-F97316?logo=lucide&logoColor=white) | **0.468** | Icon system |
+| ![html5-qrcode](https://img.shields.io/badge/html5--qrcode-EF4444?logo=html5&logoColor=white) | **2.3** | Webcam live QR scanning |
 
-Create `.env.local`:
+### 🔧 Backend
 
-```env
-NEXT_PUBLIC_API_URL=http://localhost:8000
-```
+| Technology | Version | Purpose |
+|:----------:|:-------:|:--------|
+| ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white) | **0.115** | Async API framework |
+| ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) | **3.11+** | Backend runtime |
+| ![Pydantic](https://img.shields.io/badge/Pydantic-E92063?logo=pydantic&logoColor=white) | **v2** | Request/response validation |
+| `PyJWT` | latest | JWT session tokens |
+| `Argon2id` | latest | Password hashing (OWASP recommended) |
+| `SlowAPI` | latest | Rate limiting middleware |
+| `qrcode` + `Pillow` | latest | QR image generation |
+| `OpenCV` | latest | QR image decoding |
+| `openpyxl` | latest | XLSX spreadsheet parsing |
 
-Start the frontend:
+### 🗄️ Data & Infrastructure
 
-```bash
-npm run dev
-```
+| Service | Role | Environment |
+|:-------:|:----:|:-----------:|
+| 🍃 **MongoDB Atlas** | Primary database | Production |
+| ⚡ **Redis** | Rate-limit counter store | Production |
+| 🗃️ **SQLite** | Isolated dev database | Local dev only |
+| 🐳 **Docker** | Backend containerization | All environments |
+| ▲ **Vercel** | Frontend CDN + hosting | Production |
+| 🔷 **Render** | Backend PaaS (Docker) | Production |
 
-Frontend:
+</div>
 
-```text
-http://localhost:3000
-```
+---
 
-## Step 3: Configure Backend
+## 🛠️ Local Development Setup
 
-Open another terminal:
+> **Prerequisites:** Python 3.11+, Node.js 18+, npm
 
-```bash
+### 🔧 Step 1 — Backend Setup
+
+```powershell
+# Navigate to backend
 cd backend
-```
 
-Create a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-Activate it on Windows:
-
-```powershell
+# Create & activate virtual environment
+py -m venv .venv
 .\.venv\Scripts\Activate.ps1
-```
 
-Install dependencies:
-
-```bash
+# Install dependencies
 python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
+python -m pip install -r requirements-dev.txt
 
-Create your environment file:
-
-```powershell
+# Copy environment file
 Copy-Item .env.example .env
 ```
 
-Start FastAPI:
+Generate a cryptographically strong JWT secret:
 
-```bash
+```powershell
+python -c "import secrets; print(secrets.token_urlsafe(48))"
+```
+
+Paste the output into `backend/.env` as `JWT_SECRET`:
+
+```env
+# backend/.env (local development)
+APP_ENV=development
+JWT_SECRET=<paste-generated-secret-here>
+
+# Optional: use MongoDB Atlas even locally
+# MONGODB_URI=mongodb+srv://<user>:<pass>@<cluster>/
+# MONGODB_DATABASE=qr_code_studio
+
+# Leave blank for local dev (uses SQLite + in-memory rate limits)
+REDIS_URL=
+```
+
+Start the API server:
+
+```powershell
 uvicorn app.main:app --reload --port 8000
 ```
 
-Backend:
-
-```text
-http://localhost:8000
-```
-
-Interactive API documentation:
-
-```text
-http://localhost:8000/docs
-```
+| Endpoint | URL |
+|:--------:|:---:|
+| 🔧 **API Base** | http://localhost:8000 |
+| 📖 **Swagger UI** | http://localhost:8000/docs |
+| 🔍 **ReDoc** | http://localhost:8000/redoc |
+| ❤️ **Health Check** | http://localhost:8000/api/health |
 
 ---
 
-# 09. ENVIRONMENT CONFIGURATION
+### ⚡ Step 2 — Frontend Setup
 
-## Frontend Environment
+```powershell
+# In a NEW terminal, navigate to frontend
+cd frontend
 
-File: `frontend/.env.local`
+# Install dependencies
+npm install
+
+# Copy environment file
+Copy-Item .env.local.example .env.local
+```
 
 ```env
+# frontend/.env.local
 NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
-## Backend Environment
+Start the dev server:
 
-File: `backend/.env`
-
-```env
-MONGODB_URI=
-MONGODB_DATABASE=qr_code_studio
-
-FRONTEND_ORIGIN=http://localhost:3000
-
-PUBLIC_BASE_URL=http://localhost:8000
+```powershell
+npm run dev
 ```
 
-### MongoDB Configuration
-
-To enable MongoDB, provide your MongoDB Atlas connection string:
-
-```env
-MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@YOUR_CLUSTER.mongodb.net/
-```
-
-Configure your database:
-
-```env
-MONGODB_DATABASE=qr_code_studio
-```
-
-**Important:** Keep database credentials private. Never commit `.env` or `.env.local` files to GitHub.
-
-If MongoDB is not configured or its connection fails, the current storage implementation falls back to SQLite.
-
-For production, verify the database connection explicitly rather than assuming MongoDB is active.
+🌐 Open **http://localhost:3000** in your browser.  
+📝 Register at `/register` → all workspace routes require a valid session.
 
 ---
 
-# 10. API DOCUMENTATION
+### 📷 Step 3 — Webcam Scanner
 
-Base URL:
-
-```text
-http://localhost:8000
-```
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/api/health` | Check backend health |
-| POST | `/api/qr/generate` | Generate QR code |
-| POST | `/api/qr/scan` | Scan QR image |
-| GET | `/api/history` | Get QR history |
-| DELETE | `/api/history/{id}` | Delete QR history |
-| PATCH | `/api/history/{id}/favorite` | Update favorite |
-| GET | `/api/analytics` | Get analytics |
-| POST | `/api/qr/dynamic` | Create dynamic QR |
-| PATCH | `/api/qr/dynamic/{code}` | Update destination |
-| GET | `/r/{code}` | Dynamic redirect |
-| POST | `/api/bulk` | Bulk QR generation |
-| POST | `/api/qr/pdf` | Convert image to PDF |
-
-## Example: Generate QR Code
-
-Request:
-
-```http
-POST /api/qr/generate
-Content-Type: application/json
-```
-
-Body:
-
-```json
-{
-  "type": "url",
-  "data": {
-    "content": "https://example.com"
-  },
-  "title": "My Website",
-  "foreground": "#111827",
-  "background": "#FFFFFF",
-  "error_correction": "H",
-  "box_size": 10,
-  "border": 4
-}
-```
-
-## Example: Create Dynamic QR
-
-```http
-POST /api/qr/dynamic
-Content-Type: application/json
-```
-
-Body:
-
-```json
-{
-  "title": "My Dynamic Link",
-  "destination": "https://example.com"
-}
-```
-
-## Example: Update Dynamic Destination
-
-```http
-PATCH /api/qr/dynamic/ABC123
-Content-Type: application/json
-```
-
-Body:
-
-```json
-{
-  "title": "Updated Link",
-  "destination": "https://example.com/new-page"
-}
-```
+> Webcam access requires camera permission **and** a secure context.
+> 
+> - ✅ `http://localhost` → allowed for local dev  
+> - ✅ `https://` → required for production  
+> - ❌ `http://` on non-localhost → will not work
 
 ---
 
-# 11. DATABASE ARCHITECTURE
+## ☁️ Deployment
 
-QR Studio currently uses two storage options.
+### 🍃 MongoDB Atlas Configuration
 
 ```mermaid
-flowchart TD
-    A["Storage Service"]
-    B{"MongoDB URI Available?"}
-    C["Connect to MongoDB"]
-    D{"Connection Successful?"}
-    E[("MongoDB Collections")]
-    F[("SQLite Database")]
-    G["History Operations"]
-    H["Redirect Operations"]
-    I["Analytics Operations"]
-
-    A --> B
-    B -->|"Yes"| C
-    C --> D
-    D -->|"Yes"| E
-    D -->|"No"| F
-    B -->|"No"| F
-    E --> G
-    E --> H
-    E --> I
-    F --> G
-    F --> H
-    F --> I
+graph LR
+    A["1️⃣ Create Atlas Project + Cluster"] --> B["2️⃣ Add DB User with strong password"]
+    B --> C["3️⃣ Allowlist backend IP in Network Access"]
+    C --> D["4️⃣ Copy connection string"]
+    D --> E["5️⃣ Set env vars in Render"]
+    style A fill:#0f172a,stroke:#22c55e,color:#a7f3d0
+    style B fill:#0f172a,stroke:#22c55e,color:#a7f3d0
+    style C fill:#0f172a,stroke:#22c55e,color:#a7f3d0
+    style D fill:#0f172a,stroke:#22c55e,color:#a7f3d0
+    style E fill:#0f172a,stroke:#22c55e,color:#a7f3d0
 ```
 
-### MongoDB Collections
+Production environment variables:
 
-**history**
-
-Stores QR generation records:
-
-```json
-{
-  "id": "unique_identifier",
-  "title": "My Website",
-  "content": "https://example.com",
-  "type": "url",
-  "created_at": "2026-11-03T10:00:00+00:00",
-  "favorite": false
-}
-```
-
-**redirects**
-
-Stores dynamic QR information:
-
-```json
-{
-  "code": "ABC123",
-  "destination": "https://example.com",
-  "created_at": "2026-11-03T10:00:00+00:00",
-  "scans": 0
-}
+```env
+# backend — Render environment
+APP_ENV=production
+JWT_SECRET=<long-random-secret-min-48-chars>
+MONGODB_URI=mongodb+srv://<db-user>:<password>@<cluster-host>/
+MONGODB_DATABASE=qr_code_studio
+REDIS_URL=rediss://<managed-redis-tls-url>
+FRONTEND_ORIGIN=https://app.yourdomain.com
+PUBLIC_BASE_URL=https://api.yourdomain.com
 ```
 
 ---
 
-# 12. ERROR CORRECTION LEVELS
+### 🔷 Backend — Render (Docker)
 
-QR Studio supports four QR error correction levels.
-
-| Level | Recovery Capacity | Use Case |
-|---|---|---|
-| L | Approximately 7% | Clean QR codes |
-| M | Approximately 15% | General usage |
-| Q | Approximately 25% | Moderate damage tolerance |
-| H | Approximately 30% | Logo embedding and higher recovery |
-
-Higher error correction generally increases QR code complexity and reduces its maximum data capacity.
-
-For logo embedding, QR Studio requires level H.
+| Step | Action |
+|:----:|:-------|
+| **1** | Push repository to GitHub |
+| **2** | Create Render Blueprint from repo (`render.yaml` auto-configures the Docker service) |
+| **3** | Add secret env vars in Render dashboard |
+| **4** | Use managed Redis with TLS (`rediss://`) |
+| **5** | Enable MongoDB Atlas backups on your cluster |
+| **6** | Verify: `GET https://api.yourdomain.com/api/health` → `{"database": "mongodb"}` |
 
 ---
 
-# 13. TESTING & VALIDATION
+### ▲ Frontend — Vercel
 
-Recommended verification checklist:
+| Step | Action |
+|:----:|:-------|
+| **1** | Import GitHub repository into Vercel |
+| **2** | Set **Root Directory** → `frontend` |
+| **3** | Add env var: `NEXT_PUBLIC_API_URL=https://api.yourdomain.com` |
+| **4** | Deploy & configure custom domain |
 
-- [ ] Frontend starts successfully.
-- [ ] Backend starts successfully.
-- [ ] Health endpoint returns success.
-- [ ] Text QR generation works.
-- [ ] Website QR generation works.
-- [ ] Wi-Fi QR generation works.
-- [ ] Email QR generation works.
-- [ ] Contact QR generation works.
-- [ ] PNG export works.
-- [ ] SVG export works.
-- [ ] Logo embedding works.
-- [ ] QR image scanning works.
-- [ ] Dynamic QR creation works.
-- [ ] Dynamic destination updating works.
-- [ ] Redirect scan counting works.
-- [ ] CSV bulk generation works.
-- [ ] ZIP download works.
-- [ ] History management works.
-- [ ] Favorite functionality works.
-- [ ] Analytics endpoint works.
-- [ ] PDF export works.
-- [ ] MongoDB persistence is verified separately.
+> 💡 **Pro Tip:** Use the same registrable domain for frontend + API (e.g., `app.example.com` and `api.example.com`) to ensure reliable cross-origin cookie behavior. **Never** use wildcard CORS with credentials.
 
-Build frontend:
+---
 
-```bash
-cd frontend
-npm run build
+## 🔐 Security Model
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      🛡️  DEFENSE IN DEPTH                               │
+├─────────────────┬──────────────────────────────────────────────────────┤
+│  Layer          │  Controls                                             │
+├─────────────────┼──────────────────────────────────────────────────────┤
+│ 🔑 AuthN        │ Argon2id password hashing (OWASP P1)                 │
+│                 │ 12-hour signed JWT in HttpOnly, SameSite=None cookie  │
+│                 │ Secure flag enforced in production                    │
+├─────────────────┼──────────────────────────────────────────────────────┤
+│ 🚦 Rate Limits  │ Per-IP limits via SlowAPI                            │
+│                 │ Redis shared counters across API instances             │
+│                 │ Request & file size ceiling                           │
+├─────────────────┼──────────────────────────────────────────────────────┤
+│ 🌐 CORS         │ Exact allowlist (no wildcards)                       │
+│                 │ Origin checked on all state-changing requests         │
+├─────────────────┼──────────────────────────────────────────────────────┤
+│ 💾 Data         │ All DB queries scoped by authenticated user_id        │
+│                 │ No cross-account history access possible              │
+│                 │ Production fails closed if MongoDB unreachable        │
+├─────────────────┼──────────────────────────────────────────────────────┤
+│ 📤 Input        │ QR content size limit                                │
+│                 │ Image pixel ceiling                                   │
+│                 │ File-type checks, 10 MB upload cap                   │
+│                 │ 500-row CSV/XLSX limit                               │
+├─────────────────┼──────────────────────────────────────────────────────┤
+│ 🔒 Headers      │ Security response headers on all responses            │
+│                 │ Dynamic redirect uses unguessable codes               │
+│                 │ Editing redirects requires ownership verification     │
+└─────────────────┴──────────────────────────────────────────────────────┘
 ```
 
-Run backend:
-
-```bash
-cd backend
-uvicorn app.main:app --reload --port 8000
-```
+> ⚠️ **Never commit** `.env`, JWT secrets, database credentials, or Redis credentials. Use your platform's secret manager.
 
 ---
 
-# 14. PRODUCTION IMPROVEMENT ROADMAP
-
-The following are potential future improvements, not claims about currently implemented features.
-
-| Priority | Improvement |
-|---|---|
-| High | Authentication and individual user accounts |
-| High | User-level database isolation |
-| High | Production MongoDB connection validation |
-| High | Secure environment and secret management |
-| High | Automated backend tests |
-| High | Playwright frontend testing |
-| Medium | Redis-based rate limiting |
-| Medium | Advanced QR scan analytics |
-| Medium | QR templates and design presets |
-| Medium | Downloadable PDF QR sheets |
-| Medium | QR expiration and access controls |
-| Medium | Docker-based deployment |
-| Future | Team workspaces |
-| Future | Subscription and billing system |
-| Future | Advanced analytics dashboard |
-
----
-
-# 15. SECURITY CONSIDERATIONS
-
-Before public production deployment, consider:
-
-- Validate all incoming user input.
-- Restrict uploaded image and CSV sizes.
-- Configure CORS for trusted frontend origins.
-- Protect MongoDB credentials.
-- Add API rate limiting.
-- Prevent unauthorized history access.
-- Introduce authentication before enabling private user workspaces.
-- Add URL validation and protection against unsafe redirect destinations.
-- Configure HTTPS.
-- Avoid exposing internal errors to clients.
-- Monitor database availability.
-
-**Production note:** The current project does not implement authentication or individual user accounts. Its history and dynamic redirects are shared application-level records, not isolated user records.
-
----
-
-# 16. CONTRIBUTION GUIDELINES
-
-Contributions are welcome.
-
-1. Fork the repository.
-2. Create a new feature branch.
-3. Implement your changes.
-4. Test frontend and backend functionality.
-5. Commit your changes.
-6. Create a pull request.
-
-Example:
-
-```bash
-git checkout -b feature/new-qr-feature
-```
-
-```bash
-git add .
-git commit -m "feat: add new QR functionality"
-git push origin feature/new-qr-feature
-```
-
----
-
-# 17. DEVELOPER
+## 📡 API Reference
 
 <div align="center">
 
-## Vishal Deep
+### 🔑 Authentication
 
-**Software Developer | Full Stack Developer | AI Systems Enthusiast**
+| Method | Route | 🔒 Auth | Description |
+|:------:|:------|:-------:|:------------|
+| `POST` | `/api/auth/register` | ❌ Public | Create account + session cookie |
+| `POST` | `/api/auth/login` | ❌ Public | Sign in, receive session cookie |
+| `POST` | `/api/auth/logout` | ⚪ Optional | Clear session cookie |
+| `GET`  | `/api/auth/me` | ✅ Required | Get current authenticated user |
 
-Building practical software solutions using modern web technologies, backend engineering and intelligent systems.
+### 🔲 QR Code Operations
 
-[![GitHub](https://img.shields.io/badge/GitHub-VishalDeep1377-181717?style=for-the-badge&logo=github)](https://github.com/VishalDeep1377)
+| Method | Route | 🔒 Auth | Description |
+|:------:|:------|:-------:|:------------|
+| `POST` | `/api/qr/generate` | ✅ Required | Generate & save QR code (PNG/SVG) |
+| `POST` | `/api/qr/scan` | ✅ Required | Decode uploaded QR image (OpenCV) |
+| `POST` | `/api/qr/dynamic` | ✅ Required | Create dynamic redirect QR |
+| `PATCH`| `/api/qr/dynamic/{code}` | ✅ Required | Update own redirect destination |
+| `GET`  | `/r/{code}` | ❌ Public | Redirect endpoint + scan event |
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/vishal-deeedeep-14a864255)
+### 📜 History & Favorites
+
+| Method | Route | 🔒 Auth | Description |
+|:------:|:------|:-------:|:------------|
+| `GET` | `/api/history` | ✅ Required | List user's QR history |
+| `DELETE` | `/api/history/{id}` | ✅ Required | Delete own QR history item |
+| `PATCH` | `/api/history/{id}/favorite` | ✅ Required | Toggle favorite on own item |
+
+### 📊 Analytics & Bulk
+
+| Method | Route | 🔒 Auth | Description |
+|:------:|:------|:-------:|:------------|
+| `GET`  | `/api/analytics` | ✅ Required | Per-user analytics & metrics |
+| `POST` | `/api/bulk` | ✅ Required | CSV/XLSX → ZIP of PNG QR codes |
+| `POST` | `/api/qr/pdf` | ✅ Required | Export uploaded image to PDF |
+| `GET`  | `/api/health` | ❌ Public | API + database health check |
 
 </div>
 
 ---
 
-# 18. LICENSE
+## 📊 Analytics & Monitoring
 
-Add a LICENSE file to the repository before declaring a license for this project.
+The analytics dashboard provides real-time insights powered by **Recharts**:
 
-Until then, no open-source license is specified.
+```
+📊 Per-Account Metrics Dashboard
+┌─────────────────┬──────────────────────┬─────────────────────┐
+│  🔲 Total QRs   │  ⭐ Favorites        │  🌐 Dynamic QRs     │
+│  Created        │  Saved               │  Active Redirects   │
+├─────────────────┼──────────────────────┼─────────────────────┤
+│  📈 Daily Scan  │  🥧 QR Type          │  📉 Scan Events     │
+│  Activity Chart │  Breakdown           │  Timeline           │
+└─────────────────┴──────────────────────┴─────────────────────┘
+```
+
+> **Privacy Note:** Dynamic scan analytics records timestamps and counts only. It does **not** infer precise location or device identity.
+
+---
+
+## 🧪 Automated Testing
+
+### Backend Tests
+
+```powershell
+cd backend
+
+# Syntax validation
+python -m compileall -q app tests
+
+# Run pytest suite (FastAPI TestClient)
+pytest -q
+```
+
+### Frontend Tests
+
+```powershell
+cd frontend
+
+# ESLint check
+npm run lint
+
+# TypeScript build validation
+npm run build
+
+# Playwright E2E smoke tests
+npx playwright install chromium
+npm run test:e2e
+```
+
+### CI/CD Pipeline
+
+```mermaid
+graph LR
+    PR["📥 Push / PR"] --> CI["⚙️ GitHub Actions CI"]
+    CI --> B["🐍 Backend Tests<br/>pytest + compileall"]
+    CI --> C["⚡ Frontend Lint<br/>ESLint + TypeScript"]
+    CI --> D["🎭 Browser Tests<br/>Playwright E2E"]
+    B & C & D --> OK["✅ All Checks Pass"]
+    OK --> MERGE["🔀 Merge to main"]
+    style PR fill:#1e1b4b,stroke:#6366f1,color:#e0e7ff
+    style CI fill:#0f172a,stroke:#f59e0b,color:#fef3c7
+    style OK fill:#0f172a,stroke:#22c55e,color:#a7f3d0
+    style MERGE fill:#0f172a,stroke:#a855f7,color:#f3e8ff
+```
+
+---
+
+## 🚧 Release Gates
+
+> ⛔ **Do NOT skip these before a public or company launch.**
+
+<div align="center">
+
+| Category | Gate | Status |
+|:--------:|:-----|:------:|
+| 🔐 **Identity** | Email verification & password reset | 🔴 Pending |
+| 🔐 **Identity** | MFA / TOTP support | 🔴 Pending |
+| 🔐 **Identity** | SSO / SAML / OAuth enterprise IdP | 🔴 Pending |
+| 👥 **Multi-tenant** | Organization workspaces & invitations | 🔴 Pending |
+| 👥 **Multi-tenant** | Fine-grained permissions & quotas | 🔴 Pending |
+| 💳 **Billing** | Subscription management & billing | 🔴 Pending |
+| 📋 **Compliance** | Privacy policy, ToS, data retention controls | 🔴 Pending |
+| 📋 **Compliance** | GDPR account export/deletion workflow | 🔴 Pending |
+| 🔍 **Observability** | Centralized audit logs & alerting | 🔴 Pending |
+| 🔍 **Observability** | Error monitoring (Sentry/Datadog) | 🔴 Pending |
+| 💾 **Reliability** | MongoDB backup restoration drills | 🔴 Pending |
+| 💾 **Reliability** | Disaster recovery objectives (RTO/RPO) | 🔴 Pending |
+| 🛡️ **Security** | External penetration test | 🔴 Pending |
+| 🛡️ **Security** | Dependency vulnerability scanning | 🔴 Pending |
+| 🛡️ **Security** | Formal threat modeling & security sign-off | 🔴 Pending |
+| ⚙️ **Infrastructure** | Redis-backed job queue for long batch runs | 🔴 Pending |
+
+</div>
+
+---
+
+## 🌟 Contributing
+
+```powershell
+# 1. Fork & clone
+git clone https://github.com/VishalDeep1377/QR-CODE-GENARTOR.git
+cd QR-CODE-GENARTOR
+
+# 2. Create feature branch
+git checkout -b feat/your-feature-name
+
+# 3. Make changes, run tests
+cd backend && pytest -q
+cd ../frontend && npm run lint && npm run build
+
+# 4. Commit with conventional commits
+git commit -m "feat: add awesome feature"
+
+# 5. Push & open PR
+git push origin feat/your-feature-name
+```
+
+---
+
+## 📄 License
+
+```
+MIT License — Copyright (c) 2026 Vishal Deep
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions: The above copyright
+notice and this permission notice shall be included in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+```
 
 ---
 
 <div align="center">
 
-### QR STUDIO
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:EC4899,50:A855F7,100:6C63FF&height=120&section=footer" width="100%"/>
 
-**Create Smarter. Scan Faster. Manage Better.**
+### 🔲 QR Code Studio Enterprise
 
-Built with Next.js, TypeScript, Python and FastAPI.
+**Built with ❤️ by [Vishal Deep](https://github.com/VishalDeep1377)**
 
-⭐ If you find this project useful, consider giving it a star!
+[![GitHub](https://img.shields.io/badge/GitHub-VishalDeep1377-181717?style=for-the-badge&logo=github)](https://github.com/VishalDeep1377/QR-CODE-GENARTOR)
+
+*If this project helped you, please consider giving it a ⭐ star!*
+
+![Visitor Count](https://komarev.com/ghpvc/?username=VishalDeep1377&color=6C63FF&style=for-the-badge&label=PROFILE+VIEWS)
 
 </div>
